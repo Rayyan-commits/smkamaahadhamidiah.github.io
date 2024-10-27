@@ -1,0 +1,229 @@
+:root {
+    --primary-yellow: #FFD700;
+    --primary-green: #228B22;
+    --primary-red: #FF4B3E;
+    --bg-gradient-1: #f7f3dc;
+    --bg-gradient-2: #fff;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-2));
+    min-height: 100vh;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(120deg, var(--primary-green), var(--primary-yellow));
+    padding: 2rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 75, 62, 0.2), transparent);
+    z-index: 1;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+/* Navigation Styles */
+nav {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    max-width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: linear-gradient(120deg, var(--primary-yellow), var(--primary-green));
+    color: var(--text-light);
+    transform: translateY(-2px);
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+.content-card h2 {
+    color: var(--primary-green);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.content-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-yellow), var(--primary-green));
+    border-radius: 2px;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to right, var(--primary-green), var(--primary-yellow));
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .content-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Additional styles for Lagu Sekolah page */
+.arabic-text {
+    font-family: 'Traditional Arabic', Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+    margin: 2rem 0;
+}
+
+.rumi-text {
+    line-height: 1.8;
+    margin: 2rem 0;
+}
+
+.content h3 {
+    color: var(--primary-green);
+    margin-top: 2rem;
+    font-size: 1.4rem;
+}
+
+.content h4 {
+    color: var(--text-dark);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.content p {
+    margin: 0.5rem 0;
+}
